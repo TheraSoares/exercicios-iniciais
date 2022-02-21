@@ -1,3 +1,6 @@
+<?php 
+$result=null
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -89,7 +92,9 @@
                 } ?>
                 <div class="row">
                     <div class="col">
-                        <h5><?PHP echo $result ?></h5>
+                        <h5><?PHP if ($result != null) {
+                        echo $result;
+                    } ?></h5>
                     </div>
                 </div>
 
