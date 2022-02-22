@@ -21,133 +21,17 @@
     <div class="container">
         <form method="post">
             <?php 
-            $num = 'num';
-            for($i = 1; $i <=2; $i++){
+            for($i = 1; $i <=20; $i++){
                 ?>
                 <div class="row">
                 <div class="col-4">
-                    <label for="">Número 1:</label>
-                    <input class="col" type="number" name="<?php $num.$i?>">
+                    <label for="">Número <?php echo $i;?>:</label>
+                    <input class="col" type="number" name="num<?php echo $i;?>">
                 </div>
             </div>
             <?php
             }
             ?>
-
-            <!--<div class="row">
-                <div class="col-4">
-                    <label for="">Número 2:</label>
-                    <input class="col" type="number" name="num2">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <label for="">Número 1:</label>
-                    <input class="col" type="number" name="num3">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <label for="">Número 2:</label>
-                    <input class="col" type="number" name="num4">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <label for="">Número 1:</label>
-                    <input class="col" type="number" name="num5">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <label for="">Número 2:</label>
-                    <input class="col" type="number" name="num6">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <label for="">Número 1:</label>
-                    <input class="col" type="number" name="num7">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <label for="">Número 2:</label>
-                    <input class="col" type="number" name="num8">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <label for="">Número 1:</label>
-                    <input class="col" type="number" name="num9">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <label for="">Número 2:</label>
-                    <input class="col" type="number" name="num10">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <label for="">Número 1:</label>
-                    <input class="col" type="number" name="num11">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <label for="">Número 2:</label>
-                    <input class="col" type="number" name="num12">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <label for="">Número 1:</label>
-                    <input class="col" type="number" name="num13">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <label for="">Número 2:</label>
-                    <input class="col" type="number" name="num14">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <label for="">Número 1:</label>
-                    <input class="col" type="number" name="num15">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <label for="">Número 2:</label>
-                    <input class="col" type="number" name="num16">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <label for="">Número 1:</label>
-                    <input class="col" type="number" name="num17">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <label for="">Número 2:</label>
-                    <input class="col" type="number" name="num18">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <label for="">Número 1:</label>
-                    <input class="col" type="number" name="num19">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <label for="">Número 2:</label>
-                    <input class="col" type="number" name="num20">
-                </div>
-            </div>-->
             <br>
             <div class="row">
                 <div class="col-4">
@@ -160,60 +44,42 @@
                 if (isset($_POST["calcular"])) {
                     $a = $_POST;
                     
-                    /*$num1 = $_POST["num1"];
-                    $num2 = $_POST["num2"];
-                    $num3 = $_POST["num3"];
-                    $num4 = $_POST["num4"];
-                    $num5 = $_POST["num5"];
-                    $num6 = $_POST["num6"];
-                    $num7 = $_POST["num7"];
-                    $num8 = $_POST["num8"];
-                    $num9 = $_POST["num9"];
-                    $num10 = $_POST["num10"];
-                    $num11 = $_POST["num11"];
-                    $num12 = $_POST["num12"];
-                    $num13 = $_POST["num13"];
-                    $num14 = $_POST["num14"];
-                    $num15 = $_POST["num15"];
-                    $num16 = $_POST["num16"];
-                    $num17 = $_POST["num17"];
-                    $num18 = $_POST["num18"];
-                    $num19 = $_POST["num19"];
-                    $num20 = $_POST["num20"];*/
                     $nump = array();
                     $numn = array();
 
-                    /*for($i = 1; $i<=20; $i++){
+                    foreach ($a as $key => $value) {
                         
-                        $a = $num.$i;
-
-                        if ( $a >= 0) {
-                            array_push($nump, $a);
+                        if ( $value >= 0) {
+                            array_push($nump, $value);
                         }else{
-                            array_push($numn, $a);
+                            array_push($numn, $value);
                         }
-                    }*/
+                    }
             
 
                 ?>
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-10">
                             <h5>Números positivos:</h5>
                             <hr>
                             <h5><?php
-                                foreach ($a as $key => $value) {
+                                foreach ($nump as $key => $value) {
                                     print $value . "\n";
                                 } ?></h5>
+                                <h6>soma = <?php print array_sum($nump);?></h6>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-10">
                             <h5>Números negativos:</h5>
                             <hr>
                             <h5><?php
                                 foreach ($numn as $key => $value) {
                                     print $value . "\n";
-                                } ?></h5>
+                                } 
+                                ?></h5>
+                                <h6>soma = <?php print array_sum($numn);?></h6>
+                                
                         </div>
                     </div>
 
