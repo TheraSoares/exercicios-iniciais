@@ -21,7 +21,7 @@
     <div class="container">
         <form method="post">
             <?php 
-            for($i = 1; $i <=2; $i++){
+            for($i = 1; $i <=20; $i++){
                 ?>
                 <div class="row">
                 <div class="form-group col-4">
@@ -38,7 +38,7 @@
                     <button type="input" name="calcular" class="btn btn-primary">Calcular</button>
                 </div>
             </div>
-            <br><br>
+
             <div class="row">
                 <?php
                 if (isset($_POST["calcular"])) {
