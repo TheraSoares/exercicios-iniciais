@@ -5,55 +5,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário Bootstrap</title>
+    <title>Exercícios PHP</title>
     <!-- CSS Bootstrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
 </head>
 
 <body>
-
-    <header>
-        <h2>Exercício 3</h2>
-    </header>
-    <hr>
-
     <div class="container">
+        <header>
+            <h2>Exercício 3</h2>
+        </header>
+        <hr>
         <form method="post">
             <div class="row">
-                <div class="col-4">
-                    <label for="">Nome:</label>
-                    <input class="col" type="text" name="nome">
+                <div class="form-group col-4">
+                    <label for="nome">Nome:</label>
+                    <input class="form-control text-center" type="text" id="nome" name="nome">
                 </div>
             </div>
             <div class="row">
-                <div class="col-4">
-                    <label for="">Sexo:</label>
-                    <select class="col" name="sexo">
+                <div class="form-group col-4">
+                    <label for="sexo">Sexo:</label>
+                    <select class="form-control text-center" id="sexo" name="sexo">
                         <option value="femi">Feminino</option>
                         <option value="masc">Masculino</option>
                     </select>
                 </div>
             </div>
             <div class="row">
-                <div class="col-4">
+                <div class="form-group col-4">
                     <label for="">Idade:</label>
-                    <input class="col" type="text" name="idade">
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-4">
-                    <button type="input" name="enviar" class="btn btn-primary">Enviar</button>
+                    <input class="form-control text-center"type="number" id="idade" name="idade">
                 </div>
             </div>
 
-            <br><br>
+            <div class="row">
+                <div class="form-group col-4">
+                    <button type="input" name="enviar" class="btn btn-primary">Enviar</button>
+                </div>
+            </div>
             <div class="row">
                 <?php
                 if (isset($_POST["enviar"])) {
                     $idade = $_POST["idade"];
-                    if ($idade <> 0 || $idade <> null and is_numeric($idade)) {
+                    if ($idade != 0 and $idade != null and is_numeric($idade)) {
                         if ($idade <= 18) {
                 ?>
                             <div class="col alert alert-success">
@@ -70,7 +66,7 @@
                         }
                     } else {
                         ?>
-                        <div class="col alert alert-danger">
+                        <div class="col alert alert-warning">
                             <h5>DIGITE UM NÚMERO VÁLIDO PARA A IDADE.</h5>
                         </div>
                 <?php

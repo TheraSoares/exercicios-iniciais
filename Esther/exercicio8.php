@@ -12,59 +12,51 @@
 </head>
 
 <body>
-
-    <header>
-        <h2>Exercício 8</h2>
-    </header>
-    <hr>
-
     <div class="container">
+        <header>
+            <h2>Exercício 8</h2>
+        </header>
+        <hr>
         <form method="post">
             <div class="row">
-                <div class="col-4">
-                    <label for="">Digite um número:</label>
-                    <input class="col" type="text" name="num1">
+                <div class="form-group col-4">
+                    <label for="num1">Digite um número:</label>
+                    <input class="form-control text-center" type="text" id="num1" name="num1">
                 </div>
             </div>
-            <br>
             <div class="row">
-                <div class="col-4">
+                <div class="form-group col-4">
                     <button type="input" name="calcular" class="btn btn-primary">Calcular</button>
                 </div>
             </div>
-
-            <br><br>
             <div class="row">
                 <?php
                 if (isset($_POST["calcular"])) {
                     $num1 = $_POST["num1"];
                     $numeros = array();
                     $produt = 1;
-                    settype($produt, "double");
-
                     for ($i = $num1; $i > 0; $i--) {
                         $produt *= $i;
                         $numeros[$i] = $i;
                     }
-                    $produt = number_format($produt, 0, ',', '.');
-                ?>
-                    <div class="row">
-                        <div class="col">
-                            <h5>Número: <?php
-                                        echo $num1;
-                                        ?></h5>
-                            <hr>
-                            <h5>Lista: <?php
-                                        foreach($numeros as $num){
-                                            print $num . " \n";
-                                        }
-                                        ?></h5>
-                            <h5>Produto: <?php
+                    $produt = number_format($produt, 0, ',', '.'); ?>
+
+                    <div class="col alert alert-success">
+                        <h5>Número: <?php
+                                    echo $num1;
+                                    ?></h5>
+                        <hr>
+                        <h5>Lista: <?php
+                                    foreach ($numeros as $num) {
+                                        print $num . " \n";
+                                    }
+                                    ?></h5>
+                        <h5>Produto: <?php
                                         echo $produt;
                                         ?></h5>
-                        </div>
-                    </div><?php
-                        } ?>
+                    </div>
+
+                <?php } ?>
 
             </div>
         </form>

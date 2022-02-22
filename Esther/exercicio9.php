@@ -12,48 +12,45 @@
 </head>
 
 <body>
-
-    <header>
-        <h2>Exercício 9</h2>
-    </header>
-    <hr>
-
     <div class="container">
+        <header>
+            <h2>Exercício 9</h2>
+        </header>
+        <hr>
         <form method="post">
             <div class="row">
-                <div class="col-4">
-                    <label for="">Digite o número de vezes que deseja imprimir a palavra SOL:</label>
-                    <input class="col" type="text" name="num">
+                <div class="form-group col-4">
+                    <label for="num">Digite o número de vezes que deseja imprimir a palavra SOL:</label>
+                    <input class="form-control text-center" type="text" id="num" name="num">
                 </div>
             </div>
-            <br>
             <div class="row">
-                <div class="col-4">
+                <div class="form-group col-4">
                     <button type="input" name="imprimir" class="btn btn-primary">Imprimir</button>
                 </div>
             </div>
-
-            <br><br>
             <div class="row">
                 <?php
                 if (isset($_POST["imprimir"])) {
                     $num = $_POST["num"];
-                ?>
-                    <div class="row">
-                        <div class="col">
-                            <h5>SOL <?php
-                                        echo $num;
-                                        ?> VEZES:</h5>
-                            <hr>
-                            <h5><?php
-                                        for($i = $num; $i >= 1; $i--){
-                                            print "SOL\n";
-                                        }
-                                        ?></h5>
+                    if ($num!=0 and $num!=null and $num>0) {?>
+                    <div class="col alert alert-success">
+                        <h5>SOL <?php
+                                echo $num;
+                                ?> VEZES:</h5>
+                        <hr>
+                        <h5><?php
+                            for ($i = $num; $i >= 1; $i--) {
+                                print "SOL\n";
+                            }
+                        ?></h5>
+                    </div>
+                    <?php }else {?>
+                        <div class="col-4 alert alert-warning">
+                            <h5>Didite um numero válido!</h5>
                         </div>
-                    </div><?php
-                        } ?>
-
+                    <?php }?>
+                <?php } ?>
             </div>
         </form>
     </div>

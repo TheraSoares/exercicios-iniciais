@@ -21,12 +21,12 @@
     <div class="container">
         <form method="post">
             <?php 
-            for($i = 1; $i <=20; $i++){
+            for($i = 1; $i <=2; $i++){
                 ?>
                 <div class="row">
-                <div class="col-4">
+                <div class="form-group col-4">
                     <label for="">Número <?php echo $i;?>:</label>
-                    <input class="col" type="number" name="num<?php echo $i;?>">
+                    <input class="form-control text-center" type="number" name="num<?php echo $i;?>">
                 </div>
             </div>
             <?php
@@ -34,7 +34,7 @@
             ?>
             <br>
             <div class="row">
-                <div class="col-4">
+                <div class="form-group col-4">
                     <button type="input" name="calcular" class="btn btn-primary">Calcular</button>
                 </div>
             </div>
@@ -43,43 +43,37 @@
                 <?php
                 if (isset($_POST["calcular"])) {
                     $a = $_POST;
-                    
                     $nump = array();
                     $numn = array();
 
                     foreach ($a as $key => $value) {
-                        
                         if ( $value >= 0) {
                             array_push($nump, $value);
                         }else{
                             array_push($numn, $value);
                         }
-                    }
-            
-
-                ?>
+                    }?>
                     <div class="row">
-                        <div class="col-10">
+                        <div class="col-10 alert alert-warning">
                             <h5>Números positivos:</h5>
                             <hr>
                             <h5><?php
-                                foreach ($nump as $key => $value) {
-                                    print $value . "\n";
+                                foreach ($nump as $chave => $valor) {
+                                    print $valor . "\n";
                                 } ?></h5>
-                                <h6>soma = <?php print array_sum($nump);?></h6>
+                            <h6>soma = <?php print array_sum($nump);?></h6>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-10">
+                        <div class="col-10 alert alert-warning">
                             <h5>Números negativos:</h5>
                             <hr>
                             <h5><?php
-                                foreach ($numn as $key => $value) {
-                                    print $value . "\n";
+                                foreach ($numn as $chave => $valor) {
+                                    print $valor . "\n";
                                 } 
                                 ?></h5>
-                                <h6>soma = <?php print array_sum($numn);?></h6>
-                                
+                            <h6>soma = <?php print array_sum($numn);?></h6>
                         </div>
                     </div>
 

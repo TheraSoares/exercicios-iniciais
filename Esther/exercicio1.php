@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário Bootstrap</title>
-    <?php include'logo.php';?>
+    <title>Exercícios PHP</title>
+
     <!-- CSS Bootstrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
@@ -18,9 +18,7 @@
             <h2>Exercicio 1</h2>
         </header>
         <hr>
-    </div>
 
-    <div class="container">
         <form method="POST">
             <div class="row">
                 <div class="col">
@@ -30,22 +28,20 @@
             <div class="row justify-content-center">
                 <h5>Para continuar digite dois numeros inteiros</h5>
             </div>
-            <br><br>
-
-            <div class="row">
-                <div class="col-sm">
-                    <label>Primeiro número:</label>
-                    <input class="col" type="text" name="num1">
+            <div class="row justify-content-center">
+                <div class="form-group col-4">
+                    <label for="num1">Primeiro número:</label>
+                    <input class="form-control text-center" type="number" id="num1" name="num1">
                 </div>
-
-                <div class="col-sm">
-                    <label for="">Segundo número:</label>
-                    <input class="col" type="text" name="num2">
+                <div class="form-group col-4">
+                    <label for="num2">Segundo número:</label>
+                    <input class="form-control text-center" type="number" id="num2" name="num2">
                 </div>
             </div>
             <div class="row justify-content-center">
-                <button type="submit" name="somar">Somar</button>
+                <button type="submit" name="somar" class="btn btn-primary">Somar</button>
             </div>
+
 
         </form>
         <div class="row">

@@ -12,74 +12,63 @@
 </head>
 
 <body>
-
-    <header>
-        <h2>Exercício 7</h2>
-    </header>
-    <hr>
-
     <div class="container">
+        <header>
+            <h2>Exercício 7</h2>
+        </header>
+        <hr>
         <form method="post">
             <div class="row">
-                <div class="col-4">
-                    <h3>Biblioteca Locservice</h3>
+                <h3>Biblioteca Locservice</h3>
+            </div>
+            <div class="row">
+                <h4>Emprestimo</h4>
+            </div>
+            <div class="row">
+                <div class="form-group col-4">
+                    <label for="livro">Livro:</label>
+                    <input class="form-control text-center" type="text" id="livro" name="livro">
                 </div>
             </div>
             <div class="row">
-                <div class="col-4">
-                    <h4>Emprestimo</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <label for="">Livro:</label>
-                    <input class="col" type="text" name="livro">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <label for="">Usuário:</label>
-                    <select class="col" name="user">
+                <div class="form-group col-4">
+                    <label for="user">Usuário:</label>
+                    <select class="form-control text-center" id="user" name="user">
                         <option value="Professor">Professor</option>
                         <option value="Aluno">Aluno</option>
                     </select>
                 </div>
             </div>
-            <br>
             <div class="row">
-                <div class="col-4">
+                <div class="form-group col-4">
                     <button type="input" name="descobrir" class="btn btn-primary">Emprestar</button>
                 </div>
             </div>
-
-            <br><br>
             <div class="row">
                 <?php
                 if (isset($_POST["descobrir"])) {
                     $livro = $_POST["livro"];
                     $usuario = $_POST["user"];
                     if ($usuario == 'Professor') {
-                        $dt_entrega = date('d/m/Y', strtotime('+10 days'));//prof
+                        $dt_entrega = date('d/m/Y', strtotime('+10 days')); //prof
                     } elseif ($usuario == 'Aluno') {
-                        $dt_entrega = date('d/m/Y', strtotime('+3 days'));//aluno
+                        $dt_entrega = date('d/m/Y', strtotime('+3 days')); //aluno
                     } ?>
-
-                    <div class="row">
-                        <div class="col">
-                            <h5>Biblioteca Locservice</h5>
-                            <hr>
-                            <h5>Livro:<?php
-                                        echo $livro;
-                                        ?></h5>
-                            <h5>Usuário:<?php
-                                        echo $usuario;
-                                        ?></h5>
-                            <h5>Devolução:<?php
+                    <div class="col-4 alert alert-warning">
+                        <h5>Biblioteca Locservice</h5>
+                        <hr>
+                        <h5>Livro: <?php
+                                    echo $livro;
+                                    ?></h5>
+                        <h5>Usuário: <?php
+                                    echo $usuario;
+                                    ?></h5>
+                        <h5>Devolução: <?php
                                         echo $dt_entrega;
-                                        ?></h5><?php
-                                        } ?>
-                        </div>
+                                        ?></h5>
+
                     </div>
+                <?php } ?>
             </div>
         </form>
     </div>

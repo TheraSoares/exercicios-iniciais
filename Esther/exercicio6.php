@@ -1,21 +1,3 @@
-<?php
-$meses = array(
-    1 => 'Janeiro',
-    2 => 'Fevereiro',
-    3 => 'Março',
-    4 => 'Abril',
-    5 => 'Maio',
-    6 => 'Junho',
-    7 => 'Julho',
-    8 => 'Agosto',
-    9 => 'Setembro',
-    10 => 'Outubro',
-    11 => 'Novembro',
-    12 => 'Dezembro'
-);
-$result=null
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,51 +12,56 @@ $result=null
 </head>
 
 <body>
-
-    <header>
-        <h2>Exercício 6</h2>
-    </header>
-    <hr>
-
     <div class="container">
+        <header>
+            <h2>Exercício 6</h2>
+        </header>
+        <hr>
+
         <form method="post">
             <div class="row">
-                <div class="col-4">
-                    <h3>Qual é o mês?</h3>
-                </div>
+                <h3>Qual é o mês?</h3>
             </div>
             <div class="row">
-                <div class="col-4">
-                    <label for="">Digite o numero do mês que deseja saber:</label>
-                    <input class="col" type="number" name="num1">
+                <div class="form-group col-4">
+                    <label for="num1">Digite o numero do mês que deseja saber nome:</label>
+                    <input class="form-control text-center" type="number" id="num1" name="num1">
                 </div>
             </div>
-            <br>
+
             <div class="row">
-                <div class="col-4">
+                <div class="form-group col-4">
                     <button type="input" name="descobrir" class="btn btn-primary">Descobrir</button>
                 </div>
             </div>
-            <br><br>
+
             <div class="row">
                 <?php
                 if (isset($_POST["descobrir"])) {
                     $num1 = $_POST["num1"];
-                    if ($num1 != null and $num1 <= 12) {
+                    $meses = array(
+                        1 => 'Janeiro',
+                        'Fevereiro',
+                        'Março',
+                        'Abril',
+                        'Maio',
+                        'Junho',
+                        'Julho',
+                        'Agosto',
+                        'Setembro',
+                        'Outubro',
+                        'Novembro',
+                        'Dezembro'
+                    );
+                    if ($num1 != null and $num1 > 0 and $num1 <= 12) {
                         $result = $meses[$num1];
-                    }else {
+                    } else {
                         $result = 'Não existe um mês com este número, digite um número válido.';
-                    }
-                }
-                ?>
-
-                <div class="col">
-                    <h5><?PHP if ($result != null) {
-                        echo $result;
-                    } ?></h5>
-                </div>
-
-
+                    } ?>
+                    <div class="col alert alert-info">
+                        <h5><?PHP echo $result; ?></h5>
+                    </div>
+                <?php } ?>
             </div>
         </form>
     </div>

@@ -5,47 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário Bootstrap</title>
+    <title>Exercícios PHP</title>
     <!-- CSS Bootstrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
 </head>
 
 <body>
-
-    <header>
-        <h2>Exercício 4</h2>
-    </header>
-    <hr>
-
     <div class="container">
+        <header>
+            <h2>Exercício 4</h2>
+        </header>
+        <hr>
         <form method="post">
             <div class="row">
-                <div class="col-4">
-                    <label for="">Número 1:</label>
-                    <input class="col" type="number" name="num1">
+                <div class="form-group col-4">
+                    <label for="num1">Número 1:</label>
+                    <input class="form-control text-center" type="number" id="num1" name="num1">
                 </div>
             </div>
+            
             <div class="row">
-                <div class="col-4">
-                    <label for="">Número 2:</label>
-                    <input class="col" type="number" name="num2">
+                <div class="form-group col-4">
+                    <label for="num2">Número 2:</label>
+                    <input class="form-control text-center" type="number" id="num2" name="num2">
                 </div>
             </div>
+            
             <div class="row">
-                <div class="col-4">
+                <div class="form-group col-4">
                     <label for="">Número 3:</label>
-                    <input class="col" type="number" name="num3">
+                    <input class="form-control text-center" type="number" id="num3" name="num3">
                 </div>
             </div>
-            <br>
+         
             <div class="row">
-                <div class="col-4">
+                <div class="form-group col-4">
                     <button type="input" name="ordenar" class="btn btn-primary">Ordenar</button>
                 </div>
             </div>
 
-            <br><br>
             <div class="row">
                 <?php
                 if (isset($_POST["ordenar"])) {
@@ -59,22 +58,24 @@
                             if ($num1 == $num2) {
                                 $num = array($num1);
                             }
-                        }elseif($num3 == $num1) {
+                        } elseif ($num3 == $num1) {
                             $num = array($num1, $num2);
                             if ($num1 == $num2) {
                                 $num = array($num1);
                             }
-                        }elseif ($num1 == $num2) {
+                        } elseif ($num1 == $num2) {
                             $num = array($num1, $num3);
                         }
                         arsort($num);
-                            echo "Números ordenados de forma decrescente:\n";
-                        foreach ($num as $chave => $valor) {
-                            echo "$valor;\n";
-                        }
                     }
-                } ?>
-
+                ?>
+                <div class="col alert alert-info">
+                    <h5>Números ordenados de forma decrescente: 
+                        <?php foreach ($num as $chave => $valor) {
+                            echo "$valor;\n";
+                            } ?></h5>
+                </div>
+               <?php } ?>
             </div>
         </form>
     </div>

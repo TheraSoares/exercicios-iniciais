@@ -5,21 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário Bootstrap</title>
+    <title>Exercícios PHP</title>
     <!-- CSS Bootstrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
 </head>
 
 <body>
-
-    <header>
-        <h2>Exercicio 2</h2>
-    </header>
-    <hr>
-
-
     <div class="container">
+        <header>
+            <h2>Exercicio 2</h2>
+        </header>
+        <hr>
         <form method="POST">
 
             <div class="row">
@@ -27,15 +24,15 @@
                     <h3>Verificador de divisores</h3>
                 </div>
             </div>
-            <br><br>
-
             <div class="row">
-                <div class="col-sm-8">
+                <div class="form-group col-4">
                     <label>Digite um número:</label>
-                    <input class="col" type="text" name="num1">
-                    <br><br>
+                    <input class="form-control text-center" type="text" name="num1">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-12">
                     <button type="submit" name="verif" class="btn btn-primary">Verificar</button>
-                    <br><br><br><br>
                 </div>
             </div>
             <div class="row">
